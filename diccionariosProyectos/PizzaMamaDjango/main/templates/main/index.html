@@ -1,0 +1,14 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizza Mama</title>
+    <link rel="stylesheet" href="{% static 'main/style.css' %}">
+</head>
+<body>
+        <img src="{% static 'main/images/main_logo.png' %}" alt="main logo">
+        <a href="{% url 'menu:pizzas' %}">Voir le menu</a>
+</body>
+</html>

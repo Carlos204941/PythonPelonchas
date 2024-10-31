@@ -1,0 +1,10 @@
+<label for="mon-select"></label>
+<div class="formfield-select--container">
+    <select id="mon-select" onchange="if (this.value) location.href=this.value">
+{#        Enumérer les choix à partir de platChoices.choices #}
+        <option value="{% url 'menu:pizzas' %}">Pizzas</option>
+        <option value="{% url 'menu:salades' %}">Salades</option>
+        <option value="{% url 'menu:pâtes' %}">Pâtes</option>
+        <option value="{% url 'menu:desserts' %}">Desserts</option>
+    </select>
+</div>

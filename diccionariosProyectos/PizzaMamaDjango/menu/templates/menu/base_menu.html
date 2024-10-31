@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% block link-css %}{% endblock %}
+    <script src="{% static 'menu/mes_scripts.js' %}" async></script>
+</head>
+<body>
+    <div id="transition_page" class="transition active"></div>
+    <div id="gradient-transparence"></div>
+    <div id="sticky-div">
+        <a href="{% url 'main:index' %}"><img id="small_logo" src="{% static 'menu/images/small_logo.png' %}" alt="small logo"></a><br>
+        <br>
+        {% block link-attribution %}{% endblock %}
+        {% include "menu/includes/tags.html" %}
+    </div>
+    <div class="menu_list">
+        {% for plat in plats %}
+        <div class="menu_list_item">
+            <div class="menu_list_titre_prix">
+                <p class="menu_list_title">{{ plat.nom }}</p>
+                <p class="menu_list_prix">{{ plat.prix | floatformat:2 }}€</p>
+            </div>
+            <div class="menu_list_ingredient">{{ plat.ingredients.title }}</div>
+        </div>
+        {% if plat.vegetarienne %}
+        <div class="menu_list_badge">
+            <span class="menu_list_badge">VEGETARIEN.NE</span>
+        </div>
+        {% endif %}
+        <div class="espaceur"></div>
+    {% endfor %}
+     </div>
+    <script>
+        document.getElementById("mon-select").selectedIndex = {% block index %}{% endblock %};
+    </script>
+</body>
+</html>

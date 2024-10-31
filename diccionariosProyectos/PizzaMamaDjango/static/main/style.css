@@ -1,0 +1,40 @@
+body{
+    background: url('images/main_background.jpg') no-repeat center center fixed black;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: white;
+    font-family: Garamond sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height:100vh;
+}
+img {
+    width: 60%;
+    max-width: 600px;
+}
+a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-size: 40px;
+    color: white;
+    margin-top: 30px;
+    background-color: #dd7835;
+    width: 60%;
+    max-width: 600px;
+}
+
+@media only screen and (max-width: 899px) {
+  /* For mobile phones: */
+    img {
+        width: 85%;
+    }
+    a {
+        font-size: 30px;
+        width: 85%;
+    }
+}

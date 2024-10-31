@@ -1,0 +1,10 @@
+@import 'style_pizzas.css';
+
+body {
+    background: url('images/menu_desserts_background.jpg') no-repeat center center fixed black;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.formfield-select--container select {
+    background-color: rosybrown;
+}

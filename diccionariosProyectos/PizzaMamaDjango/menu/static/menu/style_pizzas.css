@@ -1,0 +1,252 @@
+body{
+    background: url('images/menu_background.webp') no-repeat center center fixed black;
+    -webkit-background-size: cover;
+    background-size: cover;
+    color: white;
+    font-family: Garamond sans-serif;
+    margin: 0;
+    /*Pour que le background scroll avec le contenu*/
+    /*background-attachment: scroll;*/
+}
+#gradient-transparence {
+    width: 100%;
+    height: 250px;
+    z-index: 2;
+    position: fixed;
+    top:0;
+    background:linear-gradient(180deg, rgba(0,0,0,0.8) 10%, rgba(0,0,0,0) 100%);
+}
+#sticky-div {
+    position: sticky;
+    position: -webkit-sticky;
+    text-align: center;
+    top: 20px;
+    z-index:3;
+}
+img #small_logo {
+    min-height: 35px;
+    margin: 8px 25px;
+}
+.menu_list {
+    margin-left: 40px;
+}
+.menu_list_item {
+    margin-top: 30px;
+}
+.menu_list_titre_prix {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 45%;
+    min-width: 310px;
+}
+.menu_list_title {
+    font-weight: bold;
+    font-size: 25px;
+}
+.menu_list_prix {
+    background-color: #00000070;
+    font-size: 25px;
+    color: #f9c37b;
+    margin-left: 8px;
+    text-align: right;
+}
+.menu_list_ingredient {
+    font-size: 20px;
+    color: #C8C8C8;
+    margin-top: 4px;
+    margin-bottom: 0;
+    width: 45%;
+    text-align: justify;
+}
+span.menu_list_badge {
+    font-size: 15px;
+    background-color: forestgreen;
+    border-radius: 15px;
+    padding: 4px 10px;
+    font-weight: bold;
+}
+div.menu_list_badge {
+    margin-top: 8px;
+}
+h1 {
+    display: inline-block;
+    background-color: #dd7835;
+    padding: 8px 25px;
+}
+a.attribution {
+    color: white;
+    text-decoration: none;
+    margin: 8px 25px;
+}
+
+/*Le menu déroulant */
+
+.formfield-select--container {
+    -webkit-appearance: none;
+	-moz-appearance: none;
+    appearance: none;
+    position: relative;
+	height: auto;
+    width: 300px;
+    background-color: #00000000;
+	border: 0;
+	margin: 23px auto 0 auto;
+    border-radius: 3px;
+    text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
+    pointer-events: auto;
+    box-shadow: none;
+    transition: box-shadow, width 1s;
+}
+.formfield-select--container:hover {
+    box-shadow: 0 0 10px white;
+    transition: 1s;
+}
+.formfield-select--container select {
+	font-family: Garamond sans-serif;
+    width: 100%;
+	height: auto;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 10px 10px 10px 0;
+    text-align:center;
+	border: 0;
+	margin: 0;
+	border-radius: 0;
+    background-color: #dd7835;
+    cursor: pointer;
+}
+.formfield-select--container select > option:nth-child(1) {
+        background-color: #dd7835;
+}
+.formfield-select--container select > option:nth-child(2) {
+        background-color: yellowgreen;
+}
+.formfield-select--container select > option:nth-child(3) {
+        background-color: goldenrod;
+}
+.formfield-select--container select > option:nth-child(4) {
+        background-color: rosybrown;
+}
+
+/*gestion de la transition entre les pages*/
+
+.transition{
+    position: fixed;
+    width:100%;
+    height:100%;
+    background: #222222;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    transition : ease-in 0.4s;
+}
+.transition.active{
+    opacity: 1;
+    pointer-events: none;
+}
+.espaceur {
+    margin:0;
+    width: 100%;
+    height: 10px;
+}
+@media only screen and (max-device-width : 900px) and (orientation:portrait) {
+/* Styles pour téléphone */
+    #gradient-transparence {
+    height: 350px;
+    }
+    img#small_logo {
+        width: 80%;
+        max-width: 500px;
+        transition: width 1s;
+    }
+    a.attribution {
+        font-size: 2em;
+    }
+    .formfield-select--container {
+        height: 120px;
+        width: 80%;
+        box-shadow: 0 0 30px white;
+        transition: width 1s;
+    }
+    .formfield-select--container select {
+        font-size: 3em;
+        height: 120px;
+    }
+    .formfield-select--container select > option {
+        font-size: small;
+    }
+    .menu_list_titre_prix {
+        width: 99%;
+        min-width: auto;
+    }
+    .menu_list_title {
+        font-size: 3em;
+    }
+    .menu_list_prix {
+        font-size: 3em;
+        background-color: #00000080;
+    }
+    .menu_list_ingredient {
+        font-size: 2.6em;
+        width: 80%;
+        color: white;
+        background-color: #00000020;
+    }
+    span.menu_list_badge {
+        font-size: 1.1em;
+        border-radius: 2rem;
+    }
+}
+@media only screen and (max-device-width : 900px) and (orientation:landscape) {
+/* Styles pour téléphone */
+    img#small_logo {
+        width: 30%;
+    }
+    a.attribution {
+        font-size: 1em;
+    }
+    .formfield-select--container {
+        height:60px;
+        width: 50%;
+        box-shadow: 0 0 30px white;
+        transition: width 1s;
+    }
+    .formfield-select--container select {
+        font-size: 2em;
+        height: 60px;
+    }
+    .formfield-select--container select > option {
+        font-size: small;
+    }
+    .menu_list_titre_prix {
+        width: 50%;
+        min-width: auto;
+    }
+    .menu_list_title {
+        font-size: 2.0em;
+    }
+    .menu_list_prix {
+        font-size: 2.0em;
+        background-color: #00000080;
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+    .menu_list_ingredient {
+        font-size: 1.7em;
+        margin-top: 0;
+    }
+    span.menu_list_badge {
+        font-size: 1.4em;
+        border-radius: 2rem;
+    }
+    #sticky-div {
+        top: 2px;
+    }
+    a.attribution {
+        display: none;
+    }
+}
